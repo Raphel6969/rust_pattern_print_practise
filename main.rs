@@ -1,5 +1,47 @@
 fn main() {
-    _pattern31(5);
+    _pattern34(5);
+}
+
+fn _pattern34(rows: i32) {
+    let mut charas = 'E' as u8;
+    for i in (1..=rows).rev() {
+        for j in 0..i {
+            print!("{} ", (charas - j as u8) as char);
+        }
+        charas -= 1;
+        println!();
+    }
+}
+
+fn _pattern33(rows: i32) {
+    let mut charas = 'a' as u8;
+    let mut num = 1;
+    for i in 1..=rows {
+        for _j in 0..i {
+            if num % 2 == 0 {
+                let cap = (charas as u8) as char;
+                print!("{} ", cap.to_uppercase());
+                num += 1;
+                charas += 1;
+            } else {
+                let cap = (charas as u8) as char;
+                print!("{} ", cap.to_lowercase());
+                num += 1;
+                charas += 1;
+            }
+        }
+        println!();
+    }
+}
+
+fn _pattern32(rows: i32) {
+    for i in 1..=rows {
+        let charas = 'E' as u8;
+        for j in (0..i).rev() {
+            print!("{}", (charas - j as u8) as char)
+        }
+        println!();
+    }
 }
 
 fn _pattern31(rows: i32) {
